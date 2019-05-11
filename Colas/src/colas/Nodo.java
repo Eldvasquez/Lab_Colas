@@ -10,15 +10,12 @@ package colas;
  * @author alumno
  */
 public class Nodo {
-      int informacion;
+      int dato;
     Nodo siguiente;
     
-    public Nodo(int valor){
-        informacion = valor;
-        siguiente = null;
     }
 
    
-}
+
 
 

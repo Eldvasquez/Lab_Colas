@@ -6,7 +6,7 @@
 package colas;
 
 import javax.swing.JOptionPane;
-
+import java.util.Scanner;
 /**
  *
  * @author alumno
@@ -16,55 +16,51 @@ public class Menu {
     public static void main (String arg []){
       int opcion = 0, nodo = 0;
        Cola cola = new Cola();
+       Scanner teclado = new Scanner(System.in);
           
         //Menu del programa
         do {
             try {
 
-                opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
-                        "Menú de Opciones\n\n"
+                System.out.println(
+                        "\nMenú de Opciones\n\n"
                         + "1. Insertar un nodo\n"
-                        + "2. Eliminar un nodo\n"
-                        + "3. Ver si la cola esta vacia\n"
-                        + "4. Ver valores de la cola\n"
-                        + "5. Borrar cola\n"        
-                        + "6. Salir.\n\n"));
-                        
-                
+                        + "2. Buscar\n"
+                        + "3. Modificar\n"
+                        + "4. Eliminar\n"
+                        + "5. Ver valores de la cola\n"        
+                        + "6. Salir.\n\n");
+                  System.out.println("Escoja una opcion: ");
+                opcion= teclado.nextInt();
                 switch (opcion) {
                     case 1:
-                        nodo = Integer.parseInt(JOptionPane.showInputDialog(null, 
-                                "Porfavor ingresa el valor a guardar en el nodo"));
-                        cola.InsertarNodo(nodo);
+                       System.out.println("\n Insertar Nodo en la cola\n");
+                       cola.insertarNodo();
                         break;
                         
                     case 2:
-                        if(!cola.ColaVacia()){
-                            JOptionPane.showMessageDialog(null, "Se ha eliminado un nodo con el valor: "
-                             + cola.EliminarNodo());
-                        }else {
-                            JOptionPane.showMessageDialog(null, "La pila esta vacia.");
-                        }
+                        System.out.println("\nBuscar un Nodo en la cola\n");
+                        cola.buscarNodo();
                         break;
                         
                     case 3:
-                        if(cola.ColaVacia()){
-                            JOptionPane.showMessageDialog(null, "La pila esta vacia");
-                        } else {
-                            JOptionPane.showMessageDialog(null, "La pila NO vacia");
-                        }
+                       System.out.println("\n Modificar un nodo en la cola");
+                       cola.modificarNodo();
                         break;
                         
                     case 4:
                       
-                   cola.MostrarValores();
+                   System.out.println("\n Modificar un nodo en la cola");
+                       cola.eliminarNodo();
                        
                         break;                                     
                     
                     
                         
                         case 5:
-                       cola.VaciarCola();
+                       
+                       System.out.println("Desplegar cola");
+                       cola.desplegarCola();
                         break;  
                          case 6:
                        opcion = 6;
